@@ -18,11 +18,12 @@ WORKSPACE_REPO="ShengBin-101/claude-workspace"
 # Keep ~/Desktop: Claude Code keys each folder's memory to its path, and the CLAUDE.md files refer to it.
 WORKSPACE_DIR="${WORKSPACE_DIR:-$HOME/Desktop}"
 
-PACKAGES=(bash tmux git nvim claude)
+PACKAGES=(bash tmux git nvim claude terminator)
 # What those packages put in ~ (keep in sync when adding a package). Anything here that isn't already
 # a link into this repo gets moved to the backup folder first.
-TARGETS=(.bashrc .tmux.conf .gitconfig .config/nvim .claude/settings.json)
-APT_PACKAGES=(stow tmux git curl ca-certificates build-essential unzip xz-utils python3 python3-venv fontconfig wl-clipboard xclip)
+TARGETS=(.bashrc .tmux.conf .gitconfig .config/nvim .claude/settings.json .config/terminator/config)
+APT_PACKAGES=(stow tmux git curl ca-certificates build-essential unzip xz-utils python3 python3-venv fontconfig
+              wl-clipboard xclip terminator)
 BACKUP="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
 
 do_apt=1 do_tools=1 do_claude=1 do_workspace=1
@@ -140,7 +141,10 @@ fi
 step "done"
 cat <<'EOF'
 Left for you:
-  1. Open a new terminal (or: source ~/.bashrc).
-  2. Set the terminal font to "JetBrainsMono Nerd Font".
-  3. Run `claude` once to log in.
+  1. Close this terminal app completely (every window), then open Terminator
+     (Ctrl+Alt+T, or search "Terminator" in the app menu).
+     A terminal that was already running can't see the new font or the new shell settings.
+     (Terminator's font is preset. In any other terminal, pick "JetBrainsMono Nerd Font" yourself.)
+  2. Run `claude` once to log in.
+  3. Restore anything the workspace check above listed as missing.
 EOF
