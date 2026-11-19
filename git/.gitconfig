@@ -1,0 +1,13 @@
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	helper =
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !gh auth git-credential
+
+# Name, email and machine-specific settings live in ~/.gitconfig.local (not tracked).
+# Kept last so it keeps the same credential-helper order as before.
+[include]
+	path = ~/.gitconfig.local

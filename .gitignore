@@ -1,0 +1,3 @@
+# never commit machine-only files
+*.local
+!examples/bashrc.local

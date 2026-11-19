@@ -1,0 +1,15 @@
+# ~/.bashrc.local - this machine only (not tracked in ~/dotfiles). Loaded at the end of ~/.bashrc.
+# bootstrap.sh copies this example on a new machine; edit it for that machine. Put secrets here, never in ~/.bashrc.
+
+# ROS 2 Humble + Gazebo Harmonic (only loads if ROS is installed)
+if [ -f /opt/ros/humble/setup.bash ]; then
+  source /opt/ros/humble/setup.bash
+fi
+export MAKEFLAGS="-j 4"
+export ROS_DISTRO=humble
+export BB_VEHICLE=asv4
+export DIST=humble
+export GAZEBO=gz-harmonic
+export GZ_VERSION=harmonic
+
+export QT_QPA_PLATFORM=xcb
