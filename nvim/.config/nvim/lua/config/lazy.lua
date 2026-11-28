@@ -26,6 +26,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.yaml" }, -- ROS params, resume.yaml
     { import = "lazyvim.plugins.extras.lang.toml" },
+    -- AI: Claude Code inside nvim (coder/claudecode.nvim), keys under <leader>a
+    { import = "lazyvim.plugins.extras.ai.claudecode" },
     -- import/override with your plugins
     { import = "plugins" },
   },
